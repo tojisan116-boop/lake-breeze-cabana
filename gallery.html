@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Explore the accommodation, lake, nature and surroundings of Habarana Lake Breeze Cabana."
+    >
+
+    <meta
+        name="author"
+        content="Habarana Lake Breeze Cabana"
+    >
+
+    <meta
+        property="og:title"
+        content="Gallery | Habarana Lake Breeze Cabana"
+    >
+
+    <meta
+        property="og:description"
+        content="Take a look around Habarana Lake Breeze Cabana."
+    >
+
+    <meta
+        property="og:image"
+        content="images/cottage-1.jpg"
+    >
+
+    <meta
+        name="theme-color"
+        content="#123b2a"
+    >
+
+    <title>
+        Gallery | Habarana Lake Breeze Cabana
+    </title>
+
+    <link
+        rel="icon"
+        href="favicon.png"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <style>
+
+        /* =====================================================
+           GALLERY PAGE
+        ===================================================== */
+
+        .page-hero {
+            min-height: 65vh;
+
+            position: relative;
+
+            display: flex;
+            align-items: flex-end;
+
+            isolation: isolate;
+
+            color: #fff;
+        }
+
+        .page-hero-image,
+        .page-hero-overlay {
+            position: absolute;
+            inset: 0;
+
+            z-index: -2;
+        }
+
+        .page-hero-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        .page-hero-overlay {
+            z-index: -1;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(5,25,17,.9),
+                    rgba(5,25,17,.12)
+                );
+        }
+
+        .page-hero-content {
+            padding-bottom: 80px;
+        }
+
+        .page-hero-content p:not(.eyebrow) {
+            max-width: 650px;
+
+            color: rgba(255,255,255,.78);
+
+            margin-top: 20px;
+        }
+
+
+        /* Gallery intro */
+
+        .gallery-intro {
+            max-width: 750px;
+
+            margin: 0 auto;
+
+            text-align: center;
+        }
+
+        .gallery-intro p:not(.eyebrow) {
+            margin-top: 20px;
+        }
+
+
+        /* Gallery */
+
+        .full-gallery {
+            margin-top: 65px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(12, 1fr);
+
+            grid-auto-rows: 180px;
+
+            gap: 12px;
+        }
+
+        .gallery-item {
+            position: relative;
+
+            overflow: hidden;
+
+            border: 0;
+
+            padding: 0;
+
+            background: #123b2a;
+
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition:
+                transform 700ms ease,
+                filter 500ms ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.055);
+
+            filter: brightness(.76);
+        }
+
+        .gallery-item::after {
+            content: "View";
+
+            position: absolute;
+
+            left: 50%;
+            top: 50%;
+
+            transform:
+                translate(-50%, -45%);
+
+            opacity: 0;
+
+            color: #fff;
+
+            font-size: .72rem;
+            font-weight: 800;
+
+            letter-spacing: .14em;
+            text-transform: uppercase;
+
+            transition:
+                opacity 300ms ease,
+                transform 300ms ease;
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+
+            transform:
+                translate(-50%, -50%);
+        }
+
+
+        /* Layout */
+
+        .gallery-item:nth-child(1) {
+            grid-column: span 5;
+            grid-row: span 2;
+        }
+
+        .gallery-item:nth-child(2) {
+            grid-column: span 4;
+            grid-row: span 2;
+        }
+
+        .gallery-item:nth-child(3) {
+            grid-column: span 3;
+        }
+
+        .gallery-item:nth-child(4) {
+            grid-column: span 3;
+        }
+
+        .gallery-item:nth-child(5) {
+            grid-column: span 4;
+        }
+
+        .gallery-item:nth-child(6) {
+            grid-column: span 4;
+        }
+
+        .gallery-item:nth-child(7) {
+            grid-column: span 4;
+            grid-row: span 2;
+        }
+
+        .gallery-item:nth-child(8) {
+            grid-column: span 4;
+        }
+
+        .gallery-item:nth-child(9) {
+            grid-column: span 4;
+        }
+
+        .gallery-item:nth-child(10) {
+            grid-column: span 5;
+            grid-row: span 2;
+        }
+
+        .gallery-item:nth-child(11) {
+            grid-column: span 3;
+        }
+
+        .gallery-item:nth-child(12) {
+            grid-column: span 4;
+        }
+
+
+        /* Lightbox */
+
+        .lightbox {
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 5000;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 25px;
+
+            background:
+                rgba(3, 17, 11, .96);
+
+            opacity: 0;
+            visibility: hidden;
+
+            pointer-events: none;
+
+            transition:
+                opacity 300ms ease,
+                visibility 300ms ease;
+        }
+
+        .lightbox.open {
+            opacity: 1;
+            visibility: visible;
+
+            pointer-events: auto;
+        }
+
+        .lightbox-image {
+            max-width: min(1200px, 92vw);
+            max-height: 82vh;
+
+            width: auto;
+            height: auto;
+
+            object-fit: contain;
+
+            box-shadow:
+                0 30px 100px rgba(0,0,0,.4);
+        }
+
+        .lightbox-caption {
+            position: absolute;
+
+            left: 50%;
+            bottom: 30px;
+
+            transform: translateX(-50%);
+
+            width: min(700px, 80vw);
+
+            text-align: center;
+
+            color: rgba(255,255,255,.78);
+
+            font-size: .85rem;
+        }
+
+        .lightbox-close,
+        .lightbox-prev,
+        .lightbox-next {
+            position: absolute;
+
+            display: grid;
+
+            place-items: center;
+
+            border: 1px solid rgba(255,255,255,.22);
+
+            background:
+                rgba(255,255,255,.07);
+
+            color: #fff;
+
+            transition:
+                background 200ms ease,
+                transform 200ms ease;
+        }
+
+        .lightbox-close {
+            top: 22px;
+            right: 22px;
+
+            width: 48px;
+            height: 48px;
+
+            font-size: 1.4rem;
+        }
+
+        .lightbox-prev,
+        .lightbox-next {
+            top: 50%;
+
+            width: 50px;
+            height: 50px;
+
+            transform: translateY(-50%);
+
+            font-size: 1.3rem;
+        }
+
+        .lightbox-prev {
+            left: 22px;
+        }
+
+        .lightbox-next {
+            right: 22px;
+        }
+
+        .lightbox-close:hover,
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background:
+                rgba(255,255,255,.15);
+        }
+
+        .lightbox-prev:active,
+        .lightbox-next:active {
+            transform:
+                translateY(-50%) scale(.94);
+        }
+
+
+        /* Counter */
+
+        .lightbox-counter {
+            position: absolute;
+
+            top: 30px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            color: rgba(255,255,255,.55);
+
+            font-size: .72rem;
+            font-weight: 700;
+
+            letter-spacing: .12em;
+        }
+
+
+        /* CTA */
+
+        .gallery-cta {
+            margin-top: 70px;
+
+            text-align: center;
+        }
+
+
+        @media (max-width: 900px) {
+
+            .full-gallery {
+                grid-template-columns:
+                    repeat(6, 1fr);
+
+                grid-auto-rows: 160px;
+            }
+
+            .gallery-item:nth-child(n) {
+                grid-column: span 3;
+                grid-row: span 1;
+            }
+
+            .gallery-item:nth-child(1),
+            .gallery-item:nth-child(2),
+            .gallery-item:nth-child(7),
+            .gallery-item:nth-child(10) {
+                grid-column: span 6;
+                grid-row: span 2;
+            }
+
+            .lightbox-prev {
+                left: 10px;
+            }
+
+            .lightbox-next {
+                right: 10px;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .page-hero {
+                min-height: 580px;
+            }
+
+            .page-hero-content {
+                padding-bottom: 55px;
+            }
+
+            .full-gallery {
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                grid-auto-rows: 150px;
+
+                gap: 8px;
+            }
+
+            .gallery-item:nth-child(n) {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .gallery-item:nth-child(1),
+            .gallery-item:nth-child(4),
+            .gallery-item:nth-child(7),
+            .gallery-item:nth-child(10) {
+                grid-column: span 2;
+                grid-row: span 2;
+            }
+
+            .lightbox {
+                padding: 15px;
+            }
+
+            .lightbox-image {
+                max-width: 94vw;
+                max-height: 72vh;
+            }
+
+            .lightbox-prev,
+            .lightbox-next {
+                width: 42px;
+                height: 42px;
+
+                top: auto;
+                bottom: 70px;
+            }
+
+            .lightbox-prev {
+                left: 25%;
+            }
+
+            .lightbox-next {
+                right: 25%;
+            }
+
+            .lightbox-counter {
+                top: 25px;
+            }
+
+            .lightbox-caption {
+                bottom: 22px;
+
+                font-size: .72rem;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header
+    class="site-header"
+    id="siteHeader"
+>
+
+    <div class="container header-inner">
+
+        <a
+            href="index.html"
+            class="brand"
+            aria-label="Habarana Lake Breeze Cabana home"
+        >
+
+            <img
+                src="images/logo.png"
+                alt="Habarana Lake Breeze Cabana logo"
+                class="brand-logo"
+            >
+
+            <div class="brand-text">
+
+                <span>
+                    Habarana
+                </span>
+
+                <strong>
+                    Lake Breeze
+                </strong>
+
+                <small>
+                    Cabana
+                </small>
+
+            </div>
+
+        </a>
+
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+        <nav
+            class="main-nav"
+            id="mainNav"
+            aria-label="Main navigation"
+        >
+
+            <a
+                href="index.html"
+                class="nav-link"
+            >
+                Home
+            </a>
+
+            <a
+                href="rooms.html"
+                class="nav-link"
+            >
+                Stay
+            </a>
+
+            <a
+                href="activities.html"
+                class="nav-link"
+            >
+                Experiences
+            </a>
+
+            <a
+                href="gallery.html"
+                class="nav-link active"
+            >
+                Gallery
+            </a>
+
+            <a
+                href="contact.html"
+                class="nav-link"
+            >
+                Contact
+            </a>
+
+            <a
+                href="https://wa.me/94764806045"
+                class="nav-book"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Book your stay
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="page-hero">
+
+    <div class="page-hero-image">
+
+        <img
+            src="images/cottage-1.jpg"
+            alt="Habarana Lake Breeze Cabana"
+        >
+
+    </div>
+
+
+    <div class="page-hero-overlay"></div>
+
+
+    <div class="container page-hero-content">
+
+        <p class="eyebrow">
+            The gallery
+        </p>
+
+        <h1>
+            See the
+            <span>escape.</span>
+        </h1>
+
+        <p>
+            A glimpse of the cabanas, interiors,
+            lake and natural surroundings.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     GALLERY
+===================================================== -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="gallery-intro">
+
+            <p class="eyebrow">
+                Habarana Lake Breeze
+            </p>
+
+            <h2>
+                Moments worth
+                <span>remembering.</span>
+            </h2>
+
+            <p>
+                Browse the gallery and imagine your
+                next peaceful escape in Habarana.
+            </p>
+
+        </div>
+
+
+        <div
+            class="full-gallery"
+            id="fullGallery"
+        >
+
+
+            <button
+                class="gallery-item"
+                type="button"
+                data-image="images/cottage-1.jpg"
+                data-caption="Habarana Lake Breeze Cabana"
+            >
+
+                <img
+                    src="images/cottage-1.jpg"
+                    alt="Habarana Lake Breeze Cabana"
+                    loading="lazy"
+                >
+
+            </button>
+
+
+            <button
+                class="gallery-item"
+                type="button"
+                data-image="images/cottage-2.jpg"
+                data-caption="Cabana exterior"
+            >
+
+                <img
+                    src="images/cottage-2.jpg"
+                    alt="Cabana exterior"
+                    loading="lazy"
+                >
+
+            </button>
+
+
+            <button
+                class="gallery-item"
+                type="button"
+                data-image="images/cottage-3.jpg"
+                data-caption="Accommodation surrounded by nature"
+            >
+
+                <img
+                    src="images/cottage-3.jpg"
+                    alt="Accommodation surrounded by nature"
+                    loading="lazy"
+                >
+
+            </button>
+
+
+            <button
+                class="gallery-item"
+                type="button"
+                data-image="images/interior-1.jpg"
+                data-caption="Comfortable interior"
+            >
+
+                <img
+                    src="images/interior-1.jpg"
+                    alt="Comfortable accommodation interior"
+                    loading="lazy"
+                >
+
+            </button>
+
+
+            <button
+                class="gallery-item"
+                type="button"
+                data-image="images/interior-2.jpg"
+                data-caption="Interior details"
+            >
+
+                <img
+                    src="images/interior-2.jpg"
+                    alt="Interior details"
+                    loading="lazy"
+                >
+
+            </button>
+
+
+            <button
+                class="gallery-item"
+                type="button"
+                data-image="images/bathroom.jpg"
+                data-caption="Bathroom"
+            >
+
+                <img
+                    src="images/bathroom.jpg"
+                    alt="Bathroom"
+                    loading="lazy"
+                >
+
+            </button>
+
+
+            <button
+                class="gallery-item"
+                type="button"
+                data-image="images/entrance.jpg"
+                data-caption="Lake Breeze Cabana entrance"
+            >
+
+                <img
+                    src="images/entrance.jpg"
+                    alt="Lake Breeze Cabana entrance"
+                    loading="lazy"
+                >
+
+            </button>
+
+
+            <button
+                class="gallery-item"
+                type="button"
+                data-image="images/lake-1.jpg"
+                data-caption="Lake and natural surroundings"
+            >
+
+                <img
+                    src="images/lake-1.jpg"
+                    alt="Lake and natural surroundings"
+                    loading="lazy"
+                >
+
+            </button>
+
+
+            <button
+                class="gallery-item"
+                type="button"
+                data-image="images/lake-2.jpg"
+                data-caption="Peaceful lakeside scenery"
+            >
+
+                <img
+                    src="images/lake-2.jpg"
+                    alt="Peaceful lakeside scenery"
+                    loading="lazy"
+                >
+
+            </button>
+
+
+            <button
+                class="gallery-item"
+                type="button"
+                data-image="images/activity-1.jpg"
+                data-caption="Wildlife and nature experience"
+            >
+
+                <img
+                    src="images/activity-1.jpg"
+                    alt="Wildlife and nature experience"
+                    loading="lazy"
+                >
+
+            </button>
+
+
+            <button
+                class="gallery-item"
+                type="button"
+                data-image="images/activity-2.jpg"
+                data-caption="Local experience"
+            >
+
+                <img
+                    src="images/activity-2.jpg"
+                    alt="Local experience"
+                    loading="lazy"
+                >
+
+            </button>
+
+
+            <button
+                class="gallery-item"
+                type="button"
+                data-image="images/village.jpg"
+                data-caption="Sri Lankan village surroundings"
+            >
+
+                <img
+                    src="images/village.jpg"
+                    alt="Sri Lankan village surroundings"
+                    loading="lazy"
+                >
+
+            </button>
+
+
+        </div>
+
+
+        <div class="gallery-cta">
+
+            <p>
+                Planning a stay?
+            </p>
+
+            <br>
+
+            <a
+                href="https://wa.me/94764806045"
+                class="btn btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Ask about availability
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =====================================================
+     LIGHTBOX
+===================================================== -->
+
+<div
+    class="lightbox"
+    id="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Image viewer"
+>
+
+    <button
+        class="lightbox-close"
+        id="lightboxClose"
+        type="button"
+        aria-label="Close image viewer"
+    >
+        ×
+    </button>
+
+
+    <button
+        class="lightbox-prev"
+        id="lightboxPrev"
+        type="button"
+        aria-label="Previous image"
+    >
+        ←
+    </button>
+
+
+    <img
+        class="lightbox-image"
+        id="lightboxImage"
+        src=""
+        alt=""
+    >
+
+
+    <button
+        class="lightbox-next"
+        id="lightboxNext"
+        type="button"
+        aria-label="Next image"
+    >
+        →
+    </button>
+
+
+    <div
+        class="lightbox-counter"
+        id="lightboxCounter"
+    >
+        1 / 1
+    </div>
+
+
+    <p
+        class="lightbox-caption"
+        id="lightboxCaption"
+    ></p>
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="site-footer">
+
+    <div class="container footer-grid">
+
+        <div class="footer-brand">
+
+            <img
+                src="images/logo.png"
+                alt="Habarana Lake Breeze Cabana"
+            >
+
+            <p>
+                A peaceful stay surrounded by
+                the natural beauty of Habarana.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Explore
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="rooms.html">
+                Stay
+            </a>
+
+            <a href="activities.html">
+                Experiences
+            </a>
+
+            <a href="gallery.html">
+                Gallery
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Contact
+            </h3>
+
+            <a
+                href="https://wa.me/94764806045"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                WhatsApp
+            </a>
+
+            <a href="tel:+94764806045">
+                +94 76 480 6045
+            </a>
+
+            <a href="contact.html">
+                Habarana, Sri Lanka
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="container footer-bottom">
+
+        <p>
+            © <span id="currentYear"></span>
+            Habarana Lake Breeze Cabana.
+            All rights reserved.
+        </p>
+
+        <a href="index.html">
+            Home
+        </a>
+
+    </div>
+
+</footer>
+
+
+<button
+    class="back-to-top"
+    id="backToTop"
+    type="button"
+    aria-label="Back to top"
+>
+    ↑
+</button>
+
+
+<script src="js/script.js"></script>
+
+
+<!-- =====================================================
+     GALLERY JAVASCRIPT
+===================================================== -->
+
+<script>
+
+"use strict";
+
+
+const galleryItems =
+    Array.from(
+        document.querySelectorAll(".gallery-item")
+    );
+
+const lightbox =
+    document.getElementById("lightbox");
+
+const lightboxImage =
+    document.getElementById("lightboxImage");
+
+const lightboxCaption =
+    document.getElementById("lightboxCaption");
+
+const lightboxCounter =
+    document.getElementById("lightboxCounter");
+
+const lightboxClose =
+    document.getElementById("lightboxClose");
+
+const lightboxPrev =
+    document.getElementById("lightboxPrev");
+
+const lightboxNext =
+    document.getElementById("lightboxNext");
+
+
+let currentImage = 0;
+
+
+function showImage(index) {
+
+    if (!galleryItems.length) {
+        return;
+    }
+
+    currentImage =
+        (index + galleryItems.length)
+        % galleryItems.length;
+
+
+    const item =
+        galleryItems[currentImage];
+
+    const image =
+        item.dataset.image;
+
+    const caption =
+        item.dataset.caption || "";
+
+
+    lightboxImage.src = image;
+
+    lightboxImage.alt = caption;
+
+    lightboxCaption.textContent =
+        caption;
+
+    lightboxCounter.textContent =
+        `${currentImage + 1} / ${galleryItems.length}`;
+
+}
+
+
+function openLightbox(index) {
+
+    showImage(index);
+
+    lightbox.classList.add("open");
+
+    document.body.classList.add(
+        "menu-open"
+    );
+
+    lightboxClose.focus();
+
+}
+
+
+function closeLightbox() {
+
+    lightbox.classList.remove("open");
+
+    document.body.classList.remove(
+        "menu-open"
+    );
+
+    lightboxImage.src = "";
+
+}
+
+
+function nextImage() {
+
+    showImage(currentImage + 1);
+
+}
+
+
+function previousImage() {
+
+    showImage(currentImage - 1);
+
+}
+
+
+galleryItems.forEach(
+    (item, index) => {
+
+        item.addEventListener(
+            "click",
+            () => openLightbox(index)
+        );
+
+    }
+);
+
+
+lightboxClose.addEventListener(
+    "click",
+    closeLightbox
+);
+
+
+lightboxNext.addEventListener(
+    "click",
+    nextImage
+);
+
+
+lightboxPrev.addEventListener(
+    "click",
+    previousImage
+);
+
+
+lightbox.addEventListener(
+    "click",
+    event => {
+
+        if (
+            event.target === lightbox
+        ) {
+            closeLightbox();
+        }
+
+    }
+);
+
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (
+            !lightbox.classList.contains("open")
+        ) {
+            return;
+        }
+
+
+        if (event.key === "Escape") {
+            closeLightbox();
+        }
+
+
+        if (event.key === "ArrowRight") {
+            nextImage();
+        }
+
+
+        if (event.key === "ArrowLeft") {
+            previousImage();
+        }
+
+    }
+);
+
+
+/* Touch swipe support */
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+
+lightbox.addEventListener(
+    "touchstart",
+    event => {
+
+        touchStartX =
+            event.changedTouches[0].screenX;
+
+    },
+    { passive: true }
+);
+
+
+lightbox.addEventListener(
+    "touchend",
+    event => {
+
+        touchEndX =
+            event.changedTouches[0].screenX;
+
+
+        const difference =
+            touchEndX - touchStartX;
+
+
+        if (Math.abs(difference) < 50) {
+            return;
+        }
+
+
+        if (difference < 0) {
+            nextImage();
+        } else {
+            previousImage();
+        }
+
+    },
+    { passive: true }
+);
+
+</script>
+
+</body>
+  </html>
