@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Explore the accommodation at Habarana Lake Breeze Cabana, surrounded by the peaceful nature of Habarana, Sri Lanka."
+    >
+
+    <meta
+        name="author"
+        content="Habarana Lake Breeze Cabana"
+    >
+
+    <meta
+        property="og:title"
+        content="Stay | Habarana Lake Breeze Cabana"
+    >
+
+    <meta
+        property="og:description"
+        content="Discover your peaceful stay in Habarana."
+    >
+
+    <meta
+        property="og:image"
+        content="images/cottage-1.jpg"
+    >
+
+    <meta
+        name="theme-color"
+        content="#123b2a"
+    >
+
+    <title>
+        Stay | Habarana Lake Breeze Cabana
+    </title>
+
+    <link
+        rel="icon"
+        href="favicon.png"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <style>
+
+        .page-hero {
+            min-height: 65vh;
+
+            position: relative;
+
+            display: flex;
+            align-items: flex-end;
+
+            isolation: isolate;
+
+            color: #fff;
+        }
+
+        .page-hero-image,
+        .page-hero-overlay {
+            position: absolute;
+            inset: 0;
+
+            z-index: -2;
+        }
+
+        .page-hero-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        .page-hero-overlay {
+            z-index: -1;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(5,25,17,.88),
+                    rgba(5,25,17,.18)
+                );
+        }
+
+        .page-hero-content {
+            padding-bottom: 80px;
+        }
+
+        .page-hero-content p:not(.eyebrow) {
+            max-width: 650px;
+
+            color: rgba(255,255,255,.78);
+
+            margin-top: 20px;
+        }
+
+        .rooms-intro {
+            max-width: 760px;
+
+            margin-inline: auto;
+
+            text-align: center;
+        }
+
+        .rooms-intro p:not(.eyebrow) {
+            margin-top: 20px;
+        }
+
+        .room-detail {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            min-height: 520px;
+
+            margin-top: 80px;
+
+            background: #fbf9f3;
+
+            box-shadow:
+                0 20px 60px rgba(9,41,28,.08);
+        }
+
+        .room-detail.reverse {
+            direction: rtl;
+        }
+
+        .room-detail.reverse > * {
+            direction: ltr;
+        }
+
+        .room-detail-image {
+            min-height: 520px;
+        }
+
+        .room-detail-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        .room-detail-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            padding: clamp(35px, 6vw, 80px);
+        }
+
+        .room-detail-content p:not(.eyebrow) {
+            margin-top: 18px;
+        }
+
+        .room-features {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 28px;
+        }
+
+        .room-feature {
+            padding: 8px 12px;
+
+            background: #eee8db;
+
+            color: #365043;
+
+            font-size: .72rem;
+            font-weight: 700;
+        }
+
+        .room-booking {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 14px;
+
+            margin-top: 32px;
+        }
+
+        .important-note {
+            margin-top: 70px;
+
+            padding: 30px;
+
+            border-left:
+                3px solid #b99a55;
+
+            background: #eee8db;
+        }
+
+        .important-note strong {
+            display: block;
+
+            color: #123b2a;
+
+            margin-bottom: 7px;
+        }
+
+        @media (max-width: 800px) {
+
+            .page-hero {
+                min-height: 580px;
+            }
+
+            .page-hero-content {
+                padding-bottom: 55px;
+            }
+
+            .room-detail,
+            .room-detail.reverse {
+                grid-template-columns: 1fr;
+
+                direction: ltr;
+            }
+
+            .room-detail-image {
+                min-height: 350px;
+            }
+
+        }
+
+        @media (max-width: 520px) {
+
+            .room-detail-image {
+                min-height: 280px;
+            }
+
+            .room-booking {
+                flex-direction: column;
+            }
+
+            .room-booking .btn {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header
+    class="site-header"
+    id="siteHeader"
+>
+
+    <div class="container header-inner">
+
+        <a
+            href="index.html"
+            class="brand"
+            aria-label="Habarana Lake Breeze Cabana home"
+        >
+
+            <img
+                src="images/logo.png"
+                alt="Habarana Lake Breeze Cabana logo"
+                class="brand-logo"
+            >
+
+            <div class="brand-text">
+
+                <span>
+                    Habarana
+                </span>
+
+                <strong>
+                    Lake Breeze
+                </strong>
+
+                <small>
+                    Cabana
+                </small>
+
+            </div>
+
+        </a>
+
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+        <nav
+            class="main-nav"
+            id="mainNav"
+            aria-label="Main navigation"
+        >
+
+            <a
+                href="index.html"
+                class="nav-link"
+            >
+                Home
+            </a>
+
+            <a
+                href="rooms.html"
+                class="nav-link active"
+            >
+                Stay
+            </a>
+
+            <a
+                href="activities.html"
+                class="nav-link"
+            >
+                Experiences
+            </a>
+
+            <a
+                href="gallery.html"
+                class="nav-link"
+            >
+                Gallery
+            </a>
+
+            <a
+                href="contact.html"
+                class="nav-link"
+            >
+                Contact
+            </a>
+
+            <a
+                href="https://wa.me/94764806045"
+                class="nav-book"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Book your stay
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+
+<!-- =========================
+     PAGE HERO
+========================= -->
+
+<section class="page-hero">
+
+    <div class="page-hero-image">
+
+        <img
+            src="images/cottage-2.jpg"
+            alt="Habarana Lake Breeze Cabana accommodation"
+        >
+
+    </div>
+
+
+    <div class="page-hero-overlay"></div>
+
+
+    <div class="container page-hero-content">
+
+        <p class="eyebrow">
+            Your stay
+        </p>
+
+        <h1>
+            Stay close
+            <span>to nature.</span>
+        </h1>
+
+        <p>
+            Settle into a peaceful space in the heart
+            of Habarana's natural surroundings.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="rooms-intro">
+
+            <p class="eyebrow">
+                Accommodation
+            </p>
+
+            <h2>
+                Your home
+                <span>in Habarana.</span>
+            </h2>
+
+            <p>
+                Whether you're travelling as a couple,
+                with family or simply looking for a
+                peaceful base while exploring the
+                Cultural Triangle, our accommodation
+                is designed around comfort and nature.
+            </p>
+
+        </div>
+
+
+<!-- =========================
+     ROOM 1
+========================= -->
+
+        <article class="room-detail">
+
+            <div class="room-detail-image">
+
+                <img
+                    src="images/cottage-1.jpg"
+                    alt="Habarana Lake Breeze Cabana cottage"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <div class="room-detail-content">
+
+                <p class="eyebrow">
+                    Accommodation
+                </p>
+
+                <h2>
+                    Lakeside
+                    <span>Cabana</span>
+                </h2>
+
+                <p>
+                    A peaceful private space where you
+                    can relax after a day of exploring
+                    Habarana and its surrounding
+                    landscapes.
+                </p>
+
+
+                <div class="room-features">
+
+                    <span class="room-feature">
+                        Comfortable stay
+                    </span>
+
+                    <span class="room-feature">
+                        Private space
+                    </span>
+
+                    <span class="room-feature">
+                        Natural surroundings
+                    </span>
+
+                </div>
+
+
+                <div class="room-booking">
+
+                    <a
+                        href="https://wa.me/94764806045?text=Hello%20Habarana%20Lake%20Breeze%20Cabana%2C%20I%27d%20like%20to%20ask%20about%20staying%20in%20the%20Lakeside%20Cabana."
+                        class="btn btn-primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Ask about this stay
+                    </a>
+
+                    <a
+                        href="contact.html"
+                        class="btn btn-outline-dark"
+                    >
+                        Contact us
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+<!-- =========================
+     ROOM 2
+========================= -->
+
+        <article class="room-detail reverse">
+
+            <div class="room-detail-image">
+
+                <img
+                    src="images/cottage-3.jpg"
+                    alt="Exterior of Habarana Lake Breeze Cabana"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <div class="room-detail-content">
+
+                <p class="eyebrow">
+                    Comfort
+                </p>
+
+                <h2>
+                    Your peaceful
+                    <span>retreat.</span>
+                </h2>
+
+                <p>
+                    Wake up slowly, enjoy the surrounding
+                    greenery and make the most of a
+                    relaxed Sri Lankan escape.
+                </p>
+
+
+                <div class="room-features">
+
+                    <span class="room-feature">
+                        Relaxing environment
+                    </span>
+
+                    <span class="room-feature">
+                        Close to nature
+                    </span>
+
+                    <span class="room-feature">
+                        Habarana location
+                    </span>
+
+                </div>
+
+
+                <div class="room-booking">
+
+                    <a
+                        href="https://wa.me/94764806045?text=Hello%20Habarana%20Lake%20Breeze%20Cabana%2C%20I%27d%20like%20to%20ask%20about%20your%20accommodation."
+                        class="btn btn-primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Check with us
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+<!-- =========================
+     INTERIOR
+========================= -->
+
+        <article class="room-detail">
+
+            <div class="room-detail-image">
+
+                <img
+                    src="images/interior-1.jpg"
+                    alt="Interior of accommodation at Lake Breeze Cabana"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <div class="room-detail-content">
+
+                <p class="eyebrow">
+                    Inside
+                </p>
+
+                <h2>
+                    Rest,
+                    <span>reconnect.</span>
+                </h2>
+
+                <p>
+                    Comfortable interiors provide a calm
+                    place to unwind between adventures.
+                </p>
+
+
+                <div class="room-features">
+
+                    <span class="room-feature">
+                        Comfortable beds
+                    </span>
+
+                    <span class="room-feature">
+                        Relaxing interior
+                    </span>
+
+                    <span class="room-feature">
+                        Essential facilities
+                    </span>
+
+                </div>
+
+
+                <div class="room-booking">
+
+                    <a
+                        href="gallery.html"
+                        class="btn btn-outline-dark"
+                    >
+                        See the gallery
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+<!-- =========================
+     BATHROOM
+========================= -->
+
+        <article class="room-detail reverse">
+
+            <div class="room-detail-image">
+
+                <img
+                    src="images/bathroom.jpg"
+                    alt="Bathroom at Habarana Lake Breeze Cabana"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <div class="room-detail-content">
+
+                <p class="eyebrow">
+                    Facilities
+                </p>
+
+                <h2>
+                    The details
+                    <span>matter.</span>
+                </h2>
+
+                <p>
+                    From the accommodation to the
+                    everyday essentials, our goal is to
+                    make your stay comfortable and easy.
+                </p>
+
+
+                <div class="room-booking">
+
+                    <a
+                        href="https://wa.me/94764806045?text=Hello%20Habarana%20Lake%20Breeze%20Cabana%2C%20could%20you%20please%20tell%20me%20more%20about%20the%20facilities%20available%3F"
+                        class="btn btn-primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Ask about facilities
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+<!-- =========================
+     IMPORTANT NOTE
+========================= -->
+
+        <div class="important-note">
+
+            <strong>
+                Want to know the current availability?
+            </strong>
+
+            <p>
+                Contact us directly for the latest
+                availability, rates and booking
+                information. We don't display
+                made-up availability on this website.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="booking-cta">
+
+    <div class="container">
+
+        <p class="eyebrow">
+            Plan your stay
+        </p>
+
+        <h2>
+            Let's make your
+            <span>Habarana trip special.</span>
+        </h2>
+
+        <p>
+            Message us directly for accommodation,
+            availability and booking information.
+        </p>
+
+
+        <div class="hero-actions">
+
+            <a
+                href="https://wa.me/94764806045"
+                class="btn btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                WhatsApp us
+            </a>
+
+            <a
+                href="contact.html"
+                class="btn btn-outline-dark"
+            >
+                Contact page
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="site-footer">
+
+    <div class="container footer-grid">
+
+        <div class="footer-brand">
+
+            <img
+                src="images/logo.png"
+                alt="Habarana Lake Breeze Cabana"
+            >
+
+            <p>
+                A peaceful stay surrounded by
+                the natural beauty of Habarana.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Explore
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="rooms.html">
+                Stay
+            </a>
+
+            <a href="activities.html">
+                Experiences
+            </a>
+
+            <a href="gallery.html">
+                Gallery
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Contact
+            </h3>
+
+            <a
+                href="https://wa.me/94764806045"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                WhatsApp
+            </a>
+
+            <a href="tel:+94764806045">
+                +94 76 480 6045
+            </a>
+
+            <a href="contact.html">
+                Habarana, Sri Lanka
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="container footer-bottom">
+
+        <p>
+            © <span id="currentYear"></span>
+            Habarana Lake Breeze Cabana.
+            All rights reserved.
+        </p>
+
+        <a href="index.html">
+            Home
+        </a>
+
+    </div>
+
+</footer>
+
+
+<button
+    class="back-to-top"
+    id="backToTop"
+    type="button"
+    aria-label="Back to top"
+>
+    ↑
+</button>
+
+
+<script src="js/script.js"></script>
+
+</body>
+  </html>
