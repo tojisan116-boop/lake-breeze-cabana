@@ -1,0 +1,1394 @@
+/* =========================================================
+   HABARANA LAKE BREEZE CABANA
+   MASTER STYLESHEET
+========================================================= */
+
+/* =========================================================
+   1. RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #f5f1e8;
+    color: #17271f;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+::selection {
+    background: #1d563d;
+    color: #fff;
+}
+
+
+/* =========================================================
+   2. VARIABLES
+========================================================= */
+
+:root {
+    --green-950: #09291c;
+    --green-900: #0d3323;
+    --green-800: #123b2a;
+    --green-700: #1d563d;
+    --green-600: #2d6a4b;
+
+    --cream: #f5f1e8;
+    --cream-light: #fbf9f3;
+    --cream-dark: #e9e1d1;
+
+    --gold: #b99a55;
+    --gold-light: #d4bd82;
+
+    --text: #17271f;
+    --muted: #657066;
+    --white: #ffffff;
+
+    --container: 1200px;
+
+    --shadow-soft:
+        0 20px 60px rgba(9, 41, 28, 0.08);
+
+    --shadow-card:
+        0 18px 50px rgba(9, 41, 28, 0.10);
+
+    --transition:
+        300ms cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* =========================================================
+   3. GLOBAL
+========================================================= */
+
+.container {
+    width: min(
+        calc(100% - 40px),
+        var(--container)
+    );
+
+    margin-inline: auto;
+}
+
+.section {
+    padding: 110px 0;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 600;
+    line-height: 1.05;
+}
+
+h1 {
+    font-size: clamp(4rem, 8vw, 7.8rem);
+}
+
+h2 {
+    font-size: clamp(3rem, 5vw, 5.2rem);
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h1 span,
+h2 span {
+    color: var(--gold);
+}
+
+p {
+    color: var(--muted);
+}
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--green-800);
+
+    font-weight: 700;
+
+    border-bottom: 1px solid var(--gold);
+
+    padding-bottom: 5px;
+
+    transition:
+        gap var(--transition),
+        color var(--transition);
+}
+
+.text-link:hover {
+    gap: 16px;
+    color: var(--green-600);
+}
+
+
+/* =========================================================
+   4. HEADER
+========================================================= */
+
+.site-header {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 1000;
+
+    transition:
+        background var(--transition),
+        box-shadow var(--transition),
+        padding var(--transition);
+}
+
+.site-header.scrolled {
+    background: rgba(9, 41, 28, 0.94);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+}
+
+.header-inner {
+    min-height: 92px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #fff;
+
+    z-index: 1002;
+}
+
+.brand-logo {
+    width: 54px;
+    height: 54px;
+
+    object-fit: contain;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1;
+}
+
+.brand-text span {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.brand-text strong {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+}
+
+.brand-text small {
+    color: var(--gold-light);
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-top: 4px;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-link {
+    position: relative;
+
+    color: rgba(255,255,255,.88);
+
+    font-size: 0.88rem;
+    font-weight: 600;
+
+    transition: color var(--transition);
+}
+
+.nav-link::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--gold);
+
+    transition: width var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #fff;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-book {
+    background: var(--gold);
+    color: var(--green-950);
+
+    padding: 13px 21px;
+
+    font-size: 0.82rem;
+    font-weight: 800;
+
+    transition:
+        transform var(--transition),
+        background var(--transition);
+}
+
+.nav-book:hover {
+    transform: translateY(-2px);
+    background: var(--gold-light);
+}
+
+.menu-toggle {
+    display: none;
+
+    width: 46px;
+    height: 46px;
+
+    border: 1px solid rgba(255,255,255,.35);
+    background: transparent;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+
+    z-index: 1002;
+}
+
+.menu-toggle span {
+    width: 20px;
+    height: 1px;
+    background: #fff;
+
+    transition:
+        transform var(--transition),
+        opacity var(--transition);
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+
+/* =========================================================
+   5. HERO
+========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 100svh;
+
+    display: flex;
+    align-items: center;
+
+    isolation: isolate;
+
+    color: #fff;
+}
+
+.hero-background,
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: -2;
+}
+
+.hero-background img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.hero-overlay {
+    z-index: -1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(4, 24, 16, 0.84) 0%,
+            rgba(4, 24, 16, 0.54) 45%,
+            rgba(4, 24, 16, 0.18) 100%
+        );
+}
+
+.hero-content {
+    padding-top: 90px;
+    max-width: 850px;
+}
+
+.hero .eyebrow {
+    color: var(--gold-light);
+}
+
+.hero-description {
+    max-width: 650px;
+
+    margin-top: 28px;
+
+    color: rgba(255,255,255,.82);
+
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+
+    margin-top: 38px;
+}
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 52px;
+
+    padding: 0 25px;
+
+    border: 1px solid transparent;
+
+    font-size: 0.82rem;
+    font-weight: 800;
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-primary {
+    background: var(--gold);
+    color: var(--green-950);
+}
+
+.btn-primary:hover {
+    background: var(--gold-light);
+}
+
+.btn-outline {
+    color: #fff;
+    border-color: rgba(255,255,255,.55);
+}
+
+.btn-outline:hover {
+    background: #fff;
+    color: var(--green-900);
+}
+
+.btn-outline-dark {
+    color: var(--green-900);
+    border-color: var(--green-900);
+}
+
+.btn-outline-dark:hover {
+    background: var(--green-900);
+    color: #fff;
+}
+
+.btn-light {
+    background: #fff;
+    color: var(--green-900);
+}
+
+.scroll-indicator {
+    position: absolute;
+
+    bottom: 34px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    color: rgba(255,255,255,.75);
+
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 48px;
+
+    background: rgba(255,255,255,.5);
+}
+
+
+/* =========================================================
+   6. WELCOME
+========================================================= */
+
+.welcome {
+    background: var(--cream-light);
+}
+
+.two-column {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(0, .95fr);
+
+    gap: 90px;
+
+    align-items: center;
+}
+
+.section-image {
+    position: relative;
+}
+
+.section-image::after {
+    content: "";
+
+    position: absolute;
+
+    width: 45%;
+    height: 45%;
+
+    right: -22px;
+    bottom: -22px;
+
+    border: 1px solid var(--gold);
+
+    z-index: -1;
+}
+
+.section-image img {
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
+
+.section-content {
+    max-width: 540px;
+}
+
+.section-content p:not(.eyebrow) {
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   7. STAY
+========================================================= */
+
+.stay-section {
+    background: var(--cream);
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    gap: 40px;
+
+    margin-bottom: 55px;
+}
+
+.section-heading > div {
+    max-width: 760px;
+}
+
+.room-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 24px;
+}
+
+.room-card {
+    background: var(--cream-light);
+
+    box-shadow: var(--shadow-card);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.room-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 25px 70px rgba(9,41,28,.14);
+}
+
+.room-image {
+    overflow: hidden;
+}
+
+.room-image img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+
+    transition: transform 700ms ease;
+}
+
+.room-card:hover .room-image img {
+    transform: scale(1.05);
+}
+
+.room-info {
+    padding: 30px;
+}
+
+.card-label {
+    color: var(--gold);
+
+    font-size: 0.68rem;
+    font-weight: 800;
+
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.room-info h3 {
+    margin-top: 8px;
+}
+
+.room-info p:not(.card-label) {
+    margin: 13px 0 20px;
+}
+
+.room-info a {
+    color: var(--green-700);
+
+    font-size: .82rem;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   8. FEATURE
+========================================================= */
+
+.feature-section {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 680px;
+
+    background: var(--green-900);
+}
+
+.feature-image {
+    min-height: 500px;
+}
+
+.feature-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.feature-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding:
+        clamp(50px, 8vw, 110px);
+}
+
+.feature-content h2 {
+    color: #fff;
+
+    max-width: 650px;
+}
+
+.feature-content p:not(.eyebrow) {
+    color: rgba(255,255,255,.68);
+
+    max-width: 550px;
+
+    margin-top: 20px;
+}
+
+.feature-content .btn {
+    align-self: flex-start;
+    margin-top: 35px;
+}
+
+
+/* =========================================================
+   9. EXPERIENCES
+========================================================= */
+
+.experiences {
+    background: var(--cream-light);
+}
+
+.section-heading.centered {
+    display: block;
+
+    max-width: 720px;
+
+    margin-inline: auto;
+
+    text-align: center;
+}
+
+.section-heading.centered > p {
+    margin-top: 18px;
+}
+
+.experience-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 22px;
+
+    margin-top: 55px;
+}
+
+.experience-card {
+    position: relative;
+
+    min-height: 480px;
+
+    overflow: hidden;
+
+    background: var(--green-900);
+}
+
+.experience-card::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(4,22,14,.92),
+            rgba(4,22,14,.05) 70%
+        );
+}
+
+.experience-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 700ms ease;
+}
+
+.experience-card:hover img {
+    transform: scale(1.06);
+}
+
+.experience-card > div {
+    position: absolute;
+
+    left: 28px;
+    right: 28px;
+    bottom: 28px;
+
+    z-index: 2;
+}
+
+.experience-card span {
+    color: var(--gold-light);
+
+    font-size: .68rem;
+    font-weight: 800;
+
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.experience-card h3 {
+    color: #fff;
+
+    margin: 5px 0 12px;
+}
+
+.experience-card a {
+    color: #fff;
+
+    font-size: .8rem;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   10. GALLERY
+========================================================= */
+
+.gallery-preview {
+    background: var(--cream);
+}
+
+.gallery-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(12, 1fr);
+
+    grid-auto-rows: 180px;
+
+    gap: 12px;
+}
+
+.gallery-grid img {
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 500ms ease,
+        filter 500ms ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.015);
+    filter: brightness(.9);
+}
+
+.gallery-grid img:nth-child(1) {
+    grid-column: span 5;
+    grid-row: span 2;
+}
+
+.gallery-grid img:nth-child(2) {
+    grid-column: span 4;
+    grid-row: span 2;
+}
+
+.gallery-grid img:nth-child(3) {
+    grid-column: span 3;
+}
+
+.gallery-grid img:nth-child(4) {
+    grid-column: span 3;
+}
+
+.gallery-grid img:nth-child(5) {
+    grid-column: span 4;
+}
+
+
+/* =========================================================
+   11. LOCATION
+========================================================= */
+
+.location-section {
+    background:
+        linear-gradient(
+            135deg,
+            var(--cream-light),
+            #eae2d2
+        );
+
+    padding: 100px 0;
+}
+
+.location-inner {
+    display: grid;
+
+    grid-template-columns:
+        1.2fr .8fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+.location-inner h2 {
+    max-width: 650px;
+}
+
+.location-inner > div:first-child > p:not(.eyebrow) {
+    max-width: 550px;
+
+    margin: 20px 0 30px;
+}
+
+.location-card {
+    background: var(--green-900);
+    color: #fff;
+
+    padding: 45px;
+
+    box-shadow: var(--shadow-soft);
+}
+
+.location-icon {
+    font-size: 1.5rem;
+
+    margin-bottom: 20px;
+}
+
+.location-card h3 {
+    color: #fff;
+}
+
+.location-card p {
+    color: rgba(255,255,255,.65);
+
+    margin: 15px 0 20px;
+}
+
+.location-card a {
+    color: var(--gold-light);
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   12. BOOKING CTA
+========================================================= */
+
+.booking-cta {
+    padding: 120px 20px;
+
+    background: var(--cream-light);
+
+    text-align: center;
+}
+
+.booking-cta > .container {
+    max-width: 850px;
+}
+
+.booking-cta h2 {
+    max-width: 760px;
+    margin-inline: auto;
+}
+
+.booking-cta p:not(.eyebrow) {
+    max-width: 600px;
+
+    margin:
+        22px auto 0;
+}
+
+.booking-cta .hero-actions {
+    justify-content: center;
+}
+
+
+/* =========================================================
+   13. FOOTER
+========================================================= */
+
+.site-footer {
+    background: var(--green-950);
+
+    color: #fff;
+
+    padding: 75px 0 25px;
+}
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.5fr .7fr .8fr;
+
+    gap: 70px;
+}
+
+.footer-brand img {
+    width: 70px;
+    height: 70px;
+
+    object-fit: contain;
+
+    margin-bottom: 18px;
+}
+
+.footer-brand p {
+    max-width: 330px;
+
+    color: rgba(255,255,255,.58);
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 10px;
+}
+
+.footer-column h3 {
+    color: #fff;
+
+    font-size: 1.35rem;
+
+    margin-bottom: 8px;
+}
+
+.footer-column a {
+    color: rgba(255,255,255,.6);
+
+    font-size: .86rem;
+
+    transition: color var(--transition);
+}
+
+.footer-column a:hover {
+    color: var(--gold-light);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-top:
+        1px solid rgba(255,255,255,.1);
+
+    margin-top: 60px;
+    padding-top: 22px;
+}
+
+.footer-bottom p,
+.footer-bottom a {
+    color: rgba(255,255,255,.42);
+
+    font-size: .72rem;
+}
+
+.footer-bottom a:hover {
+    color: #fff;
+}
+
+
+/* =========================================================
+   14. BACK TO TOP
+========================================================= */
+
+.back-to-top {
+    position: fixed;
+
+    right: 22px;
+    bottom: 22px;
+
+    width: 46px;
+    height: 46px;
+
+    display: grid;
+    place-items: center;
+
+    border: 0;
+
+    background: var(--green-900);
+    color: #fff;
+
+    box-shadow: var(--shadow-soft);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(15px);
+
+    transition:
+        opacity var(--transition),
+        visibility var(--transition),
+        transform var(--transition);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--gold);
+    color: var(--green-950);
+}
+
+
+/* =========================================================
+   15. REVEAL ANIMATION
+========================================================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+
+    transition:
+        opacity 800ms ease,
+        transform 800ms ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   16. MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .section {
+        padding: 80px 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .main-nav {
+        position: fixed;
+
+        inset: 0;
+
+        width: 100%;
+        height: 100svh;
+
+        background: var(--green-950);
+
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+
+        gap: 28px;
+
+        opacity: 0;
+        visibility: hidden;
+
+        pointer-events: none;
+
+        transition:
+            opacity var(--transition),
+            visibility var(--transition);
+    }
+
+    .main-nav.open {
+        opacity: 1;
+        visibility: visible;
+
+        pointer-events: auto;
+    }
+
+    .nav-link {
+        font-family: "Cormorant Garamond", serif;
+
+        font-size: 2rem;
+    }
+
+    .nav-book {
+        margin-top: 10px;
+
+        padding: 15px 25px;
+    }
+
+    .two-column {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+    .section-content {
+        max-width: 700px;
+    }
+
+    .room-grid,
+    .experience-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .feature-section {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-image {
+        min-height: 450px;
+    }
+
+    .location-inner {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
+
+/* =========================================================
+   17. SMALL TABLETS / PHONES
+========================================================= */
+
+@media (max-width: 620px) {
+
+    .container {
+        width: min(
+            calc(100% - 30px),
+            var(--container)
+        );
+    }
+
+    .header-inner {
+        min-height: 78px;
+    }
+
+    .brand-logo {
+        width: 45px;
+        height: 45px;
+    }
+
+    .brand-text strong {
+        font-size: 1.15rem;
+    }
+
+    .hero {
+        min-height: 760px;
+    }
+
+    .hero-content {
+        padding-top: 80px;
+    }
+
+    h1 {
+        font-size: clamp(3.5rem, 17vw, 5.5rem);
+    }
+
+    h2 {
+        font-size: clamp(2.8rem, 13vw, 4rem);
+    }
+
+    .hero-description {
+        font-size: .95rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+
+    .section-image::after {
+        right: -10px;
+        bottom: -10px;
+    }
+
+    .section-heading {
+        display: block;
+    }
+
+    .section-heading .text-link {
+        margin-top: 25px;
+    }
+
+    .room-grid,
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-card {
+        min-height: 420px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+
+        grid-auto-rows: 160px;
+    }
+
+    .gallery-grid img:nth-child(1),
+    .gallery-grid img:nth-child(2),
+    .gallery-grid img:nth-child(3),
+    .gallery-grid img:nth-child(4),
+    .gallery-grid img:nth-child(5) {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .gallery-grid img:nth-child(1) {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .gallery-grid img:nth-child(2) {
+        grid-column: span 2;
+    }
+
+    .feature-content {
+        padding: 65px 20px;
+    }
+
+    .location-section {
+        padding: 80px 0;
+    }
+
+    .location-card {
+        padding: 30px;
+    }
+
+    .booking-cta {
+        padding: 85px 20px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+    }
+}
+
+
+/* =========================================================
+   18. ACCESSIBILITY
+========================================================= */
+
+:focus-visible {
+    outline: 2px solid var(--gold-light);
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   19. REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+  }
