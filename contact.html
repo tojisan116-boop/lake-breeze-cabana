@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Contact Habarana Lake Breeze Cabana for bookings, availability and enquiries."
+    >
+
+    <meta
+        name="theme-color"
+        content="#123b2a"
+    >
+
+    <title>
+        Contact & Booking | Habarana Lake Breeze Cabana
+    </title>
+
+    <link rel="icon" href="favicon.png">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <style>
+
+        .page-hero {
+            min-height: 62vh;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            isolation: isolate;
+            color: #fff;
+        }
+
+        .page-hero-image,
+        .page-hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+        }
+
+        .page-hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .page-hero-overlay {
+            z-index: -1;
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(5,25,17,.92),
+                    rgba(5,25,17,.15)
+                );
+        }
+
+        .page-hero-content {
+            padding-bottom: 75px;
+        }
+
+        .page-hero-content p:not(.eyebrow) {
+            max-width: 650px;
+            margin-top: 20px;
+            color: rgba(255,255,255,.78);
+        }
+
+
+        /* BOOKING AREA */
+
+        .booking-layout {
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            gap: 70px;
+            align-items: start;
+        }
+
+        .booking-copy p:not(.eyebrow) {
+            margin-top: 20px;
+        }
+
+        .booking-form {
+            margin-top: 35px;
+            display: grid;
+            gap: 18px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-group {
+            display: grid;
+            gap: 8px;
+        }
+
+        .form-group label {
+            color: #183d2c;
+            font-size: .76rem;
+            font-weight: 700;
+            letter-spacing: .04em;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            border: 1px solid #d8d3c8;
+            background: #fff;
+            color: #183d2c;
+            padding: 14px 15px;
+            border-radius: 0;
+            font: inherit;
+            outline: none;
+            transition:
+                border-color .2s ease,
+                box-shadow .2s ease;
+        }
+
+        .form-group textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #52745f;
+            box-shadow:
+                0 0 0 3px rgba(82,116,95,.10);
+        }
+
+        .form-help {
+            color: #727a73;
+            font-size: .72rem;
+        }
+
+        .booking-form .btn {
+            width: 100%;
+            margin-top: 8px;
+        }
+
+
+        /* CONTACT CARD */
+
+        .contact-card {
+            padding: 38px;
+            background: #123b2a;
+            color: #fff;
+            position: sticky;
+            top: 110px;
+        }
+
+        .contact-card h2 {
+            color: #fff;
+        }
+
+        .contact-card > p {
+            color: rgba(255,255,255,.68);
+            margin-top: 15px;
+        }
+
+        .contact-details {
+            margin-top: 32px;
+            display: grid;
+            gap: 22px;
+        }
+
+        .contact-detail {
+            display: grid;
+            grid-template-columns: 42px 1fr;
+            gap: 14px;
+            align-items: start;
+        }
+
+        .contact-icon {
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(255,255,255,.15);
+            color: #d0b56f;
+        }
+
+        .contact-detail strong {
+            display: block;
+            color: #fff;
+            font-size: .78rem;
+            margin-bottom: 4px;
+        }
+
+        .contact-detail a,
+        .contact-detail span {
+            color: rgba(255,255,255,.68);
+            font-size: .84rem;
+        }
+
+        .contact-detail a:hover {
+            color: #fff;
+        }
+
+
+        /* QUICK ACTIONS */
+
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .quick-action {
+            padding: 22px;
+            background: #eee8db;
+            text-align: center;
+        }
+
+        .quick-action strong {
+            display: block;
+            color: #123b2a;
+            margin-bottom: 6px;
+        }
+
+        .quick-action a {
+            color: #58655d;
+            font-size: .8rem;
+        }
+
+
+        /* MAP */
+
+        .location-section {
+            background: #f4f0e7;
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 55px;
+            align-items: stretch;
+        }
+
+        .location-copy p:not(.eyebrow) {
+            margin-top: 18px;
+        }
+
+        .location-points {
+            margin-top: 28px;
+            display: grid;
+            gap: 14px;
+        }
+
+        .location-point {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .location-point::before {
+            content: "✦";
+            color: #b99a55;
+            flex-shrink: 0;
+        }
+
+        .map-frame {
+            min-height: 430px;
+            border: 0;
+            width: 100%;
+        }
+
+
+        /* TRUST NOTE */
+
+        .booking-note {
+            margin-top: 45px;
+            padding: 25px;
+            background: #eee8db;
+            border-left: 3px solid #b99a55;
+        }
+
+        .booking-note strong {
+            display: block;
+            color: #123b2a;
+            margin-bottom: 6px;
+        }
+
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+
+            .booking-layout,
+            .location-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-card {
+                position: static;
+            }
+
+            .map-frame {
+                min-height: 350px;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .page-hero {
+                min-height: 560px;
+            }
+
+            .page-hero-content {
+                padding-bottom: 55px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-card {
+                padding: 28px 22px;
+            }
+
+            .quick-actions {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header
+    class="site-header"
+    id="siteHeader"
+>
+
+    <div class="container header-inner">
+
+        <a
+            href="index.html"
+            class="brand"
+            aria-label="Habarana Lake Breeze Cabana home"
+        >
+
+            <img
+                src="images/logo.png"
+                alt="Habarana Lake Breeze Cabana logo"
+                class="brand-logo"
+            >
+
+            <div class="brand-text">
+
+                <span>Habarana</span>
+
+                <strong>Lake Breeze</strong>
+
+                <small>Cabana</small>
+
+            </div>
+
+        </a>
+
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+        <nav
+            class="main-nav"
+            id="mainNav"
+            aria-label="Main navigation"
+        >
+
+            <a
+                href="index.html"
+                class="nav-link"
+            >
+                Home
+            </a>
+
+            <a
+                href="rooms.html"
+                class="nav-link"
+            >
+                Stay
+            </a>
+
+            <a
+                href="activities.html"
+                class="nav-link"
+            >
+                Experiences
+            </a>
+
+            <a
+                href="gallery.html"
+                class="nav-link"
+            >
+                Gallery
+            </a>
+
+            <a
+                href="contact.html"
+                class="nav-link active"
+            >
+                Contact
+            </a>
+
+            <a
+                href="https://wa.me/94764806045"
+                class="nav-book"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Book your stay
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="page-hero">
+
+    <div class="page-hero-image">
+
+        <img
+            src="images/entrance.jpg"
+            alt="Habarana Lake Breeze Cabana"
+        >
+
+    </div>
+
+
+    <div class="page-hero-overlay"></div>
+
+
+    <div class="container page-hero-content">
+
+        <p class="eyebrow">
+            Contact & booking
+        </p>
+
+        <h1>
+            Let's plan your
+            <span>stay.</span>
+        </h1>
+
+        <p>
+            Tell us when you're coming and what
+            you need. We'll get back to you with
+            current availability and details.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     BOOKING FORM
+===================================================== -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="booking-layout">
+
+
+            <div class="booking-copy">
+
+                <p class="eyebrow">
+                    Booking enquiry
+                </p>
+
+                <h2>
+                    Request your
+                    <span>stay.</span>
+                </h2>
+
+                <p>
+                    Fill in the details below. When you
+                    press the button, WhatsApp will open
+                    with your enquiry already prepared.
+                </p>
+
+
+                <form
+                    class="booking-form"
+                    id="bookingForm"
+                >
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="guestName">
+                                Your name *
+                            </label>
+
+                            <input
+                                id="guestName"
+                                name="guestName"
+                                type="text"
+                                placeholder="Full name"
+                                autocomplete="name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="guestPhone">
+                                Phone / WhatsApp *
+                            </label>
+
+                            <input
+                                id="guestPhone"
+                                name="guestPhone"
+                                type="tel"
+                                placeholder="+94..."
+                                autocomplete="tel"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="checkIn">
+                                Check-in *
+                            </label>
+
+                            <input
+                                id="checkIn"
+                                name="checkIn"
+                                type="date"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="checkOut">
+                                Check-out *
+                            </label>
+
+                            <input
+                                id="checkOut"
+                                name="checkOut"
+                                type="date"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="guests">
+                                Guests *
+                            </label>
+
+                            <select
+                                id="guests"
+                                name="guests"
+                                required
+                            >
+
+                                <option value="">
+                                    Select
+                                </option>
+
+                                <option value="1">
+                                    1 guest
+                                </option>
+
+                                <option value="2">
+                                    2 guests
+                                </option>
+
+                                <option value="3">
+                                    3 guests
+                                </option>
+
+                                <option value="4">
+                                    4 guests
+                                </option>
+
+                                <option value="5">
+                                    5 guests
+                                </option>
+
+                                <option value="6+">
+                                    6+ guests
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="stayType">
+                                Accommodation
+                            </label>
+
+                            <select
+                                id="stayType"
+                                name="stayType"
+                            >
+
+                                <option value="Any available accommodation">
+                                    Any available accommodation
+                                </option>
+
+                                <option value="Lakeside Cabana">
+                                    Lakeside Cabana
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Message
+                        </label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Tell us anything else you'd like us to know..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <p class="form-help">
+                        Your enquiry will be prepared as a
+                        WhatsApp message. We do not collect
+                        payment details through this form.
+                    </p>
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                    >
+                        Send booking enquiry on WhatsApp
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- CONTACT CARD -->
+
+            <aside class="contact-card">
+
+                <p class="eyebrow">
+                    Get in touch
+                </p>
+
+                <h2>
+                    We're here
+                    <span>to help.</span>
+                </h2>
+
+                <p>
+                    For the fastest response, contact us
+                    directly through WhatsApp.
+                </p>
+
+
+                <div class="contact-details">
+
+
+                    <div class="contact-detail">
+
+                        <div class="contact-icon">
+                            WA
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                WhatsApp
+                            </strong>
+
+                            <a
+                                href="https://wa.me/94764806045"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                +94 76 480 6045
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-detail">
+
+                        <div class="contact-icon">
+                            ☎
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Phone
+                            </strong>
+
+                            <a href="tel:+94764806045">
+                                +94 76 480 6045
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-detail">
+
+                        <div class="contact-icon">
+                            ⌖
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Location
+                            </strong>
+
+                            <span>
+                                Habarana, Sri Lanka
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="hero-actions">
+
+                    <a
+                        href="https://wa.me/94764806045"
+                        class="btn btn-primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Open WhatsApp
+                    </a>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+
+        <!-- QUICK ACTIONS -->
+
+        <div class="quick-actions">
+
+            <div class="quick-action">
+
+                <strong>
+                    Availability
+                </strong>
+
+                <a
+                    href="https://wa.me/94764806045?text=Hello%2C%20could%20you%20please%20tell%20me%20your%20current%20room%20availability%3F"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Check dates
+                </a>
+
+            </div>
+
+
+            <div class="quick-action">
+
+                <strong>
+                    Rates
+                </strong>
+
+                <a
+                    href="https://wa.me/94764806045?text=Hello%2C%20could%20you%20please%20send%20me%20your%20current%20room%20rates%3F"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Ask for rates
+                </a>
+
+            </div>
+
+
+            <div class="quick-action">
+
+                <strong>
+                    Experiences
+                </strong>
+
+                <a
+                    href="activities.html"
+                >
+                    Explore activities
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="booking-note">
+
+            <strong>
+                A note about availability
+            </strong>
+
+            <p>
+                Availability and rates can change.
+                We intentionally don't display fake
+                or outdated room counts. Contact us
+                for the current information before
+                making your plans.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LOCATION
+===================================================== -->
+
+<section class="section location-section">
+
+    <div class="container">
+
+        <div class="location-grid">
+
+
+            <div class="location-copy">
+
+                <p class="eyebrow">
+                    Find us
+                </p>
+
+                <h2>
+                    Come to
+                    <span>Habarana.</span>
+                </h2>
+
+                <p>
+                    Habarana is a peaceful base for
+                    exploring the surrounding wildlife,
+                    nature and Cultural Triangle.
+                </p>
+
+
+                <div class="location-points">
+
+                    <div class="location-point">
+                        Habarana, Sri Lanka
+                    </div>
+
+                    <div class="location-point">
+                        Surrounded by nature and countryside
+                    </div>
+
+                    <div class="location-point">
+                        Convenient base for exploring the region
+                    </div>
+
+                </div>
+
+
+                <br>
+
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=Habarana%20Sri%20Lanka"
+                    class="btn btn-outline-dark"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Open Google Maps
+                </a>
+
+            </div>
+
+
+            <iframe
+                class="map-frame"
+                title="Map of Habarana, Sri Lanka"
+                src="https://www.google.com/maps?q=Habarana%2C%20Sri%20Lanka&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL CTA
+===================================================== -->
+
+<section class="booking-cta">
+
+    <div class="container">
+
+        <p class="eyebrow">
+            Ready?
+        </p>
+
+        <h2>
+            Your Habarana
+            <span>escape starts here.</span>
+        </h2>
+
+        <p>
+            Send us a message and let's talk about
+            your stay.
+        </p>
+
+
+        <div
+            class="hero-actions"
+            style="justify-content:center;"
+        >
+
+            <a
+                href="https://wa.me/94764806045"
+                class="btn btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                WhatsApp us
+            </a>
+
+            <a
+                href="rooms.html"
+                class="btn btn-outline-dark"
+            >
+                View accommodation
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="site-footer">
+
+    <div class="container footer-grid">
+
+        <div class="footer-brand">
+
+            <img
+                src="images/logo.png"
+                alt="Habarana Lake Breeze Cabana"
+            >
+
+            <p>
+                A peaceful stay surrounded by
+                the natural beauty of Habarana.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Explore
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="rooms.html">
+                Stay
+            </a>
+
+            <a href="activities.html">
+                Experiences
+            </a>
+
+            <a href="gallery.html">
+                Gallery
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Contact
+            </h3>
+
+            <a
+                href="https://wa.me/94764806045"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                WhatsApp
+            </a>
+
+            <a href="tel:+94764806045">
+                +94 76 480 6045
+            </a>
+
+            <a href="contact.html">
+                Habarana, Sri Lanka
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="container footer-bottom">
+
+        <p>
+            © <span id="currentYear"></span>
+            Habarana Lake Breeze Cabana.
+            All rights reserved.
+        </p>
+
+        <a href="index.html">
+            Home
+        </a>
+
+    </div>
+
+</footer>
+
+
+<button
+    class="back-to-top"
+    id="backToTop"
+    type="button"
+    aria-label="Back to top"
+>
+    ↑
+</button>
+
+
+<script src="js/script.js"></script>
+
+
+<!-- =====================================================
+     BOOKING FORM JAVASCRIPT
+===================================================== -->
+
+<script>
+
+"use strict";
+
+
+const bookingForm =
+    document.getElementById("bookingForm");
+
+const checkIn =
+    document.getElementById("checkIn");
+
+const checkOut =
+    document.getElementById("checkOut");
+
+
+/* Today's date */
+
+const today =
+    new Date();
+
+const todayString =
+    today.toISOString().split("T")[0];
+
+
+checkIn.min = todayString;
+
+checkOut.min = todayString;
+
+
+/* Keep checkout after check-in */
+
+checkIn.addEventListener(
+    "change",
+    () => {
+
+        if (!checkIn.value) {
+            return;
+        }
+
+        checkOut.min =
+            checkIn.value;
+
+        if (
+            checkOut.value &&
+            checkOut.value <= checkIn.value
+        ) {
+            checkOut.value = "";
+        }
+
+    }
+);
+
+
+/* Submit */
+
+bookingForm.addEventListener(
+    "submit",
+    event => {
+
+        event.preventDefault();
+
+
+        if (
+            !bookingForm.checkValidity()
+        ) {
+
+            bookingForm.reportValidity();
+
+            return;
+
+        }
+
+
+        const name =
+            document
+                .getElementById("guestName")
+                .value
+                .trim();
+
+        const phone =
+            document
+                .getElementById("guestPhone")
+                .value
+                .trim();
+
+        const arrival =
+            checkIn.value;
+
+        const departure =
+            checkOut.value;
+
+        const guests =
+            document
+                .getElementById("guests")
+                .value;
+
+        const accommodation =
+            document
+                .getElementById("stayType")
+                .value;
+
+        const message =
+            document
+                .getElementById("message")
+                .value
+                .trim();
+
+
+        if (
+            departure <= arrival
+        ) {
+
+            alert(
+                "Please choose a check-out date after your check-in date."
+            );
+
+            return;
+
+        }
+
+
+        const formattedArrival =
+            new Date(
+                arrival + "T00:00:00"
+            ).toLocaleDateString(
+                "en-GB",
+                {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric"
+                }
+            );
+
+
+        const formattedDeparture =
+            new Date(
+                departure + "T00:00:00"
+            ).toLocaleDateString(
+                "en-GB",
+                {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric"
+                }
+            );
+
+
+        let whatsappMessage =
+`Hello Habarana Lake Breeze Cabana!
+
+I'd like to make a booking enquiry.
+
+Name: ${name}
+Phone / WhatsApp: ${phone}
+
+Check-in: ${formattedArrival}
+Check-out: ${formattedDeparture}
+
+Guests: ${guests}
+Accommodation: ${accommodation}`;
+
+
+        if (message) {
+
+            whatsappMessage +=
+                `\n\nAdditional message:\n${message}`;
+
+        }
+
+
+        whatsappMessage +=
+            `\n\nPlease let me know the current availability and rate. Thank you!`;
+
+
+        const whatsappURL =
+            "https://wa.me/94764806045?text=" +
+            encodeURIComponent(
+                whatsappMessage
+            );
+
+
+        window.open(
+            whatsappURL,
+            "_blank",
+            "noopener,noreferrer"
+        );
+
+    }
+);
+
+</script>
+
+</body>
+      </html>
